@@ -36,7 +36,7 @@ The script run_analysis.R does the following:
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-#### 1. Merges the training and the test sets to create one data set
+1. Merges the training and the test sets to create one data set
 
 The data sets data_train and data_test are merged with the rbind() command. The result is the dataset data_total_UCI.
 

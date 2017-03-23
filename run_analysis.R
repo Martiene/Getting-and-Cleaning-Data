@@ -11,7 +11,6 @@ library(plyr)
 
 # download and unzip file 
 
-
 Url_FUCI <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(Url_FUCI, dest="FUCI_dataset.zip", mode="wb") 
 unzip ("FUCI_dataset.zip")
@@ -94,14 +93,11 @@ names(data_total_UCI_sub)<-gsub("Jerk", " jerk ", names(data_total_UCI_sub))
 names(data_total_UCI_sub)<-gsub("activity_labels", "activitynames", names(data_total_UCI_sub))
 names(data_total_UCI_sub)<-gsub(" ", "", names(data_total_UCI_sub))
 
-
-
 ## Check the final names
 names(data_total_UCI_sub)
 str(data_total_UCI_sub)
 
-# (5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable 
-## for each activity and each subject
+# (5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 tidy_data_set <- aggregate(data_total_UCI_sub[,3:81], 
                            by = list(activity = data_total_UCI_sub$activity, subject = data_total_UCI_sub$subject),
